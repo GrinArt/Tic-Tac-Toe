@@ -225,18 +225,16 @@ int logic()
   else if (board[1] == 'O' && board[4] == 'O' && board[7] != 'X' && board[7] != 'O') move = 7;
   else if (board[7] == 'O' && board[4] == 'O' && board[1] != 'X' && board[1] != 'O') move = 1;
 
-  for (int i = 0, j = 8; i < 9; i++)
+  else
   {
-    if (i == 4) i++; if (j == 4) j--;
-    if (board[4] == 'O' && board[j] == 'O' && board[i] != 'X' && board[i] != 'O') return move = i;
-    j--;
+    for (int i = 0, j = 8; i < 9; i++)
+    {
+      if (i == 4) i++; if (j == 4) j--;
+      if (board[4] == 'O' && board[j] == 'O' && board[i] != 'X' && board[i] != 'O') return move = i;
+      j--;
+    }
   }
-  for (int i = 0, j = 8; i < 9; i++)
-  {
-    if (i == 4) i++; if (j == 4) j--;
-    if (board[4] == 'X' && board[j] == 'X' && board[i] != 'X' && board[i] != 'O') return move = i;
-    j--;
-  }
+
   if ( board[0] == 'X' && board[8] == 'X' && board[3] != 'X' && board[3] != 'O' ) move = 3;
   else if ( board[5] == 'X' && board[8] == 'X' && board[2] != 'X' && board[2] != 'O' ) move = 2;
   else if ( board[2] == 'X' && board[8] == 'X' && board[5] != 'X' && board[5] != 'O' ) move = 5;
@@ -263,12 +261,20 @@ int logic()
   else if ( board[8] == 'X' && board[2] == 'X' && board[5] != 'X' && board[5] != 'O' ) move = 5;
   else if ( board[8] == 'X' && board[6] == 'X' && board[7] != 'X' && board[7] != 'O' ) move = 6;
 
-  else if (board[4] != 'X' && board[4] != 'O') move = 4;
+  else
+  {
+    for (int i = 0, j = 8; i < 9; i++)
+    {
+      if (i == 4) i++; if (j == 4) j--;
+      if (board[4] == 'X' && board[j] == 'X' && board[i] != 'X' && board[i] != 'O') return move = i;
+      j--;
+    }
+  }
+  if (board[4] != 'X' && board[4] != 'O') move = 4;
   else if (board[0] != 'X' && board[0] != 'O') move = 0;
   else if (board[2] != 'X' && board[2] != 'O') move = 2;
   else if (board[6] != 'X' && board[6] != 'O') move = 6;
   else if (board[8] != 'X' && board[8] != 'O') move = 8;
-
   else for (int i = 1; i < 8; i += 2) if (board[i] != 'X' && board[i] != 'O') move = i;
   
   return move;
