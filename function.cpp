@@ -55,6 +55,7 @@ void chooseColor( char board[], int i )
   cout << board[i];
   SetColor( Black );
 }
+
 void printBoard()
 {
   cout << "\n\n\t\t ";
@@ -213,17 +214,18 @@ char singlePlayer()
     turn++;
   }
 }
+
 int logic()
 {
   int move;
 
-  if (board[2] == 'O' && board[8] == 'O' && board[5] != 'X' && board[5] != 'O') move = 5;
-  else if (board[0] == 'O' && board[1] == 'O' && board[2] != 'X' && board[2] != 'O') move = 2;
-  else if (board[0] == 'O' && board[2] == 'O' && board[1] != 'X' && board[1] != 'O') move = 1;
-  else if (board[0] == 'O' && board[3] == 'O' && board[6] != 'X' && board[6] != 'O') move = 6;
-  else if (board[0] == 'O' && board[6] == 'O' && board[3] != 'X' && board[3] != 'O') move = 3;
-  else if (board[1] == 'O' && board[4] == 'O' && board[7] != 'X' && board[7] != 'O') move = 7;
-  else if (board[7] == 'O' && board[4] == 'O' && board[1] != 'X' && board[1] != 'O') move = 1;
+  if (board[2] == 'O' && board[8] == 'O' && board[5] != 'X' && board[5] != 'O') return move = 5;
+  else if (board[0] == 'O' && board[1] == 'O' && board[2] != 'X' && board[2] != 'O') return move = 2;
+  else if (board[0] == 'O' && board[2] == 'O' && board[1] != 'X' && board[1] != 'O') return move = 1;
+  else if (board[0] == 'O' && board[3] == 'O' && board[6] != 'X' && board[6] != 'O') return move = 6;
+  else if (board[0] == 'O' && board[6] == 'O' && board[3] != 'X' && board[3] != 'O') return move = 3;
+  else if (board[1] == 'O' && board[4] == 'O' && board[7] != 'X' && board[7] != 'O') return move = 7;
+  else if (board[7] == 'O' && board[4] == 'O' && board[1] != 'X' && board[1] != 'O') return move = 1;
 
   else
   {
@@ -235,31 +237,31 @@ int logic()
     }
   }
 
-  if ( board[0] == 'X' && board[8] == 'X' && board[3] != 'X' && board[3] != 'O' ) move = 3;
-  else if ( board[5] == 'X' && board[8] == 'X' && board[2] != 'X' && board[2] != 'O' ) move = 2;
-  else if ( board[2] == 'X' && board[8] == 'X' && board[5] != 'X' && board[5] != 'O' ) move = 5;
+  if ( board[0] == 'X' && board[8] == 'X' && board[3] != 'X' && board[3] != 'O' ) return move = 3;
+  else if ( board[5] == 'X' && board[8] == 'X' && board[2] != 'X' && board[2] != 'O' ) return move = 2;
+  else if ( board[2] == 'X' && board[8] == 'X' && board[5] != 'X' && board[5] != 'O' ) return move = 5;
 
-  else if ( board[6] == 'X' && board[8] == 'X' && board[7] != 'X' && board[7] != 'O' ) move = 7;
-  else if ( board[0] == 'X' && board[8] == 'X' && board[5] != 'X' && board[5] != 'O' ) move = 5;
-  else if ( board[0] == 'X' && board[8] == 'X' && board[3] != 'X' && board[3] != 'O' ) move = 3;
-  else if ( board[2] == 'X' && board[6] == 'X' && board[3] != 'X' && board[3] != 'O' ) move = 3;
-  else if ( board[3] == 'X' && board[6] == 'X' && board[0] != 'X' && board[0] != 'O' ) move = 0;
-  else if ( board[3] == 'X' && board[6] == 'X' && board[7] != 'X' && board[7] != 'O' ) move = 7;
-  else if ( board[3] == 'X' && board[6] == 'X' && board[1] != 'X' && board[1] != 'O' ) move = 1;
-  else if ( board[0] == 'X' && board[2] == 'X' && board[1] != 'X' && board[1] != 'O' ) move = 1;
-  else if ( board[5] == 'X' && board[7] == 'X' && board[8] != 'X' && board[8] != 'O' ) move = 8;
-  else if ( board[2] == 'X' && board[8] == 'X' && board[5] != 'X' && board[5] != 'O' ) move = 5;
-  else if ( board[0] == 'X' && board[3] == 'X' && board[6] != 'X' && board[6] != 'O' ) move = 6;
-  else if ( board[7] == 'X' && board[8] == 'X' && board[6] != 'X' && board[6] != 'O' ) move = 6;
-  else if ( board[6] == 'X' && board[7] == 'X' && board[8] != 'X' && board[8] != 'O' ) move = 8;
-  else if ( board[2] == 'X' && board[5] == 'X' && board[8] != 'X' && board[8] != 'O' ) move = 8;
-  else if ( board[0] == 'X' && board[1] == 'X' && board[2] != 'X' && board[2] != 'O' ) move = 2;
-  else if ( board[0] == 'X' && board[2] == 'X' && board[1] != 'X' && board[1] != 'O' ) move = 1;
-  else if ( board[8] == 'X' && board[5] == 'X' && board[1] != 'X' && board[1] != 'O' ) move = 1;
-  else if ( board[0] == 'X' && board[6] == 'X' && board[3] != 'X' && board[3] != 'O' ) move = 3;
-  else if ( board[8] == 'X' && board[5] == 'X' && board[2] != 'X' && board[2] != 'O' ) move = 2;
-  else if ( board[8] == 'X' && board[2] == 'X' && board[5] != 'X' && board[5] != 'O' ) move = 5;
-  else if ( board[8] == 'X' && board[6] == 'X' && board[7] != 'X' && board[7] != 'O' ) move = 6;
+  else if ( board[6] == 'X' && board[8] == 'X' && board[7] != 'X' && board[7] != 'O' ) return move = 7;
+  else if ( board[0] == 'X' && board[8] == 'X' && board[5] != 'X' && board[5] != 'O' ) return move = 5;
+  else if ( board[0] == 'X' && board[8] == 'X' && board[3] != 'X' && board[3] != 'O' ) return move = 3;
+  else if ( board[2] == 'X' && board[6] == 'X' && board[3] != 'X' && board[3] != 'O' ) return move = 3;
+  else if ( board[3] == 'X' && board[6] == 'X' && board[0] != 'X' && board[0] != 'O' ) return move = 0;
+  else if ( board[3] == 'X' && board[6] == 'X' && board[7] != 'X' && board[7] != 'O' ) return move = 7;
+  else if ( board[3] == 'X' && board[6] == 'X' && board[1] != 'X' && board[1] != 'O' ) return move = 1;
+  else if ( board[0] == 'X' && board[2] == 'X' && board[1] != 'X' && board[1] != 'O' ) return move = 1;
+  else if ( board[5] == 'X' && board[7] == 'X' && board[8] != 'X' && board[8] != 'O' ) return move = 8;
+  else if ( board[2] == 'X' && board[8] == 'X' && board[5] != 'X' && board[5] != 'O' ) return move = 5;
+  else if ( board[0] == 'X' && board[3] == 'X' && board[6] != 'X' && board[6] != 'O' ) return move = 6;
+  else if ( board[7] == 'X' && board[8] == 'X' && board[6] != 'X' && board[6] != 'O' ) return move = 6;
+  else if ( board[6] == 'X' && board[7] == 'X' && board[8] != 'X' && board[8] != 'O' ) return move = 8;
+  else if ( board[2] == 'X' && board[5] == 'X' && board[8] != 'X' && board[8] != 'O' ) return move = 8;
+  else if ( board[0] == 'X' && board[1] == 'X' && board[2] != 'X' && board[2] != 'O' ) return move = 2;
+  else if ( board[0] == 'X' && board[2] == 'X' && board[1] != 'X' && board[1] != 'O' ) return move = 1;
+  else if ( board[8] == 'X' && board[5] == 'X' && board[1] != 'X' && board[1] != 'O' ) return move = 1;
+  else if ( board[0] == 'X' && board[6] == 'X' && board[3] != 'X' && board[3] != 'O' ) return move = 3;
+  else if ( board[8] == 'X' && board[5] == 'X' && board[2] != 'X' && board[2] != 'O' ) return move = 2;
+  else if ( board[8] == 'X' && board[2] == 'X' && board[5] != 'X' && board[5] != 'O' ) return move = 5;
+  else if ( board[8] == 'X' && board[6] == 'X' && board[7] != 'X' && board[7] != 'O' ) return move = 6;
 
   else
   {
@@ -270,14 +272,13 @@ int logic()
       j--;
     }
   }
-  if (board[4] != 'X' && board[4] != 'O') move = 4;
-  else if (board[0] != 'X' && board[0] != 'O') move = 0;
-  else if (board[2] != 'X' && board[2] != 'O') move = 2;
-  else if (board[6] != 'X' && board[6] != 'O') move = 6;
-  else if (board[8] != 'X' && board[8] != 'O') move = 8;
-  else for (int i = 1; i < 8; i += 2) if (board[i] != 'X' && board[i] != 'O') move = i;
-  
-  return move;
+
+  if (board[4] != 'X' && board[4] != 'O') return move = 4;
+  else if (board[0] != 'X' && board[0] != 'O') return move = 0;
+  else if (board[2] != 'X' && board[2] != 'O') return move = 2;
+  else if (board[6] != 'X' && board[6] != 'O') return move = 6;
+  else if (board[8] != 'X' && board[8] != 'O') return move = 8;
+  else for (int i = 1; i < 8; i += 2) if (board[i] != 'X' && board[i] != 'O')return move = i;
 }
 
 void mainPart()
@@ -314,10 +315,8 @@ void mainPart()
 
     reply = _getch();
 
-    while ( reply != 'y' && reply != 'n' && reply != 'Y' && reply != 'N'  && reply != 13 && reply != 27 )
-    {
-      reply = _getch();
-    }
+    while ( reply != 'y' && reply != 'n' && reply != 'Y' && reply != 'N'  && reply != 13 && reply != 27 ) reply = _getch();
+    
   } while ( reply == 'y' || reply == 'Y' || reply == 13 );
 }
 
